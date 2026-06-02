@@ -1,5 +1,3 @@
-package array;
-
 public class findMaxNumber {
     static int max(int arr[]) {
         int max = arr[0];

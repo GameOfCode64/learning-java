@@ -1,5 +1,3 @@
-package array;
-
 public class swap {
 
     public static void swapNum(int arr[], int index1, int index2) {
