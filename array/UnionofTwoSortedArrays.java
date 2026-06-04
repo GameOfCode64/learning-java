@@ -64,6 +64,7 @@ public class UnionofTwoSortedArrays {
         while (left < arr1.length) {
             if (writePtr == 0 || mergeArray[writePtr - 1] != arr1[left]) {
                 mergeArray[writePtr] = arr1[left];
+                writePtr++;
             }
             left++;
 
@@ -72,6 +73,7 @@ public class UnionofTwoSortedArrays {
         while (right < arr2.length) {
             if (writePtr == 0 || mergeArray[writePtr - 1] != arr2[right]) {
                 mergeArray[writePtr] = arr2[right];
+                writePtr++;
             }
             right++;
         }
