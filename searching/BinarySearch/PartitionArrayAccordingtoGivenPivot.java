@@ -1,3 +1,5 @@
+package BinarySearch;
+
 public class PartitionArrayAccordingtoGivenPivot {
     static int[] pivotArray(int[] nums, int pivot) {
         int[] result = new int[nums.length];
