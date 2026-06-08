@@ -39,6 +39,7 @@ public class UnionofTwoSortedArrays {
     static int[] OptmizeMergeArray(int arr1[], int arr2[]) {
         int[] mergeArray = new int[arr1.length + arr2.length];
         int writePtr = 0;
+        String word = "Hello World";
 
         int left = 0;
         int right = 0;
