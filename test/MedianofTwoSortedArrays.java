@@ -1,6 +1,7 @@
 public class MedianofTwoSortedArrays {
     static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int[] result = new int[nums1.length + nums2.length];
+
         if (result.length == 0) {
             return 0.0;
         }

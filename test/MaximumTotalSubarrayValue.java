@@ -1,8 +1,9 @@
 public class MaximumTotalSubarrayValue {
 
     public static void main(String[] args) {
-        int[] nums = { 1, 3, 2 };
-        int k = 3;
+        int[] nums = { 11, 8 };
+        int k = 2;
+
         long ans = 0;
         int min = nums[0];
         int max = nums[0];
@@ -14,6 +15,8 @@ public class MaximumTotalSubarrayValue {
         System.out.println(min + "," + max);
 
         long temp = max - min;
+
+        System.out.println(temp);
 
         ans = temp * k;
 
