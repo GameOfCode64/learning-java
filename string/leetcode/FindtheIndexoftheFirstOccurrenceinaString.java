@@ -1,5 +1,3 @@
-package leetcode;
-
 public class FindtheIndexoftheFirstOccurrenceinaString {
     static int strStr(String haystack, String needle) {
 

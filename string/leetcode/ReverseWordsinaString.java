@@ -1,5 +1,3 @@
-package leetcode;
-
 public class ReverseWordsinaString {
 
     static void reverse(char[] arr, int left, int right) {
