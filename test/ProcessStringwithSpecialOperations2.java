@@ -1,5 +1,5 @@
 public class ProcessStringwithSpecialOperations2 {
-    public char processStr(String s, long k) {
+    static char processStr(String s, long k) {
         s = s.toLowerCase();
         int n = s.length();
         long[] lengths = new long[n];
@@ -46,8 +46,8 @@ public class ProcessStringwithSpecialOperations2 {
         return '.';
     }
     public static void main(String[] argu){
-        string input = "a#b%c*d";
+        String s = "a#b%c*d";
         long k = 3; 
-        
+        System.out.println(processStr(s, k));
     }
 }
