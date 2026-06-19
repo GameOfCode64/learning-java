@@ -1,6 +1,4 @@
-
 public class bitwise1 {
-
     static void checkOddEven(int n) {
         if ((n & 1) == 1) {
             System.out.println("Odd");
