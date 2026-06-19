@@ -35,8 +35,15 @@ public class recursion1 {
         return n % 10 + sumOfDigits(n / 10);
     }
 
+    public static int productOfDigits(int n) {
+        if (n < 10) {
+            return n;
+        }
+        return (n % 10) * productOfDigits(n / 10);
+    }
+
     public static void main(String[] args) {
-        int n = 1;
-        System.out.println(fib(n));
+        int n = 1342;
+        System.out.println(productOfDigits(n));
     }
 }

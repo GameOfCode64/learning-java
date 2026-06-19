@@ -38,8 +38,6 @@ public class pattern {
         }
     }
 
-    static void pattern5(int 5){}
-
     public static void main(String[] args) {
         int n = 5;
         pattern4(n);
