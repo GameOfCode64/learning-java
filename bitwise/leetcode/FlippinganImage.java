@@ -1,5 +1,3 @@
-package bitwise.leetcode;
-
 public class FlippinganImage {
     static void reverse(int[][] arr) {
         for (int i = 0; i < arr.length; i++) {
