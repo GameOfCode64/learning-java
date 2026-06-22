@@ -2,6 +2,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] argu) {
+
+        int n = -10;
+        System.out.println(Math.abs(n));
+
+        if ((n & (n - 1)) == 0) {
+
+        }
         // Find the largest number
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the first number: ");
@@ -21,6 +28,6 @@ public class Main {
             max = c;
         }
         System.out.println("The largest number is: " + max);
-        // 
+        //
     }
 }

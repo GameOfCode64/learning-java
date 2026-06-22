@@ -1,7 +1,10 @@
 package maths;
 
+import java.util.Arrays;
+
 public class AdamNumber {
     public static void main(String[] argu) {
+
         int n = 112;
         int revN = 0;
         int mainSqr = 0;
