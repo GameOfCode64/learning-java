@@ -1,5 +1,7 @@
 package bitwise;
 
+import java.util.ArrayList;
+
 public class bitwise2 {
     static int checkElement(int[] arr) {
         int element = 0;
@@ -26,6 +28,8 @@ public class bitwise2 {
     }
 
     public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+
         int[] arr = { 1, 1, 2, 2, 4, 3, 3, 5, 5 };
         // System.out.println(checkElement(arr));
         System.out.println(findMagicNumber(5));
