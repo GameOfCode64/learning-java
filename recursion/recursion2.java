@@ -53,14 +53,43 @@ public class recursion2 {
         return list;
     }
 
+    static int rotatedBinarySearch(int[] arr, int target, int s, int e) {
+
+        if (s > e) {
+            return -1;
+        }
+
+        int mid = s + (e - s) / 2;
+
+        if (arr[mid] == target) {
+            return mid;
+        }
+
+        if (arr[s] <= arr[mid]) {
+            if (target >= arr[s] && target <= arr[mid]) {
+                return rotatedBinarySearch(arr, target, s, mid - 1);
+            } else {
+                return rotatedBinarySearch(arr, target, mid + 1, e);
+            }
+        }
+
+        if (target >= arr[mid] && target <= arr[e]) {
+            return rotatedBinarySearch(arr, target, mid + 1, e);
+        }
+
+        return rotatedBinarySearch(arr, target, s, mid - 1);
+    }
+
     public static void main(String[] argu) {
-        int[] arr = { 1, 4, 2, 3, 4, 5 };
+        int[] arr = { 1, 2, 3, 4, 5 };
         // System.out.println(isSorted(arr, 0));
         // System.out.println(linearSearch(arr, 6, 0));
         // System.out.println(linearSearchIndex(arr, 5, 0));
         // ArrayList<Integer> ans = linearSearchAllIndex(arr, 4, 0, new ArrayList<>());
         // System.out.println(ans);
-        System.out.println(search(arr, 4, 0));
+        // System.out.println(search(arr, 4, 0));
+
+        System.out.println(rotatedBinarySearch(arr, 4, 0, arr.length - 1));
 
     }
 }
