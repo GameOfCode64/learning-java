@@ -23,9 +23,17 @@ public class recursion3 {
 
     }
 
+    static void selectionSort(int[] arr, int row, int col, int maxIndex) {
+        if (row == 1) {
+            return;
+        }
+
+    }
+
     public static void main(String[] argu) {
         int[] arr = { 5, 4, 3, 2, 1 };
-        bubbleSort(arr, arr.length, 0);
+        // bubbleSort(arr, arr.length, 0);
+        SelectionSort(arr, arr.length - 1, 0,);
 
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + ", ");
