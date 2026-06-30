@@ -81,6 +81,7 @@ public class recursion2 {
     }
 
     public static void main(String[] argu) {
+       
         int[] arr = { 1, 2, 3, 4, 5 };
         // System.out.println(isSorted(arr, 0));
         // System.out.println(linearSearch(arr, 6, 0));

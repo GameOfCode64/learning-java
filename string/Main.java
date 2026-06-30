@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        // StringBuilder str = new StringBuilder();
         String name = "Bhavishya";
         System.out.println(name.substring(0, 4));
         StringBuilder sb = new StringBuilder("hello");
