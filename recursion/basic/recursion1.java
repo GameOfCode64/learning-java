@@ -1,3 +1,5 @@
+package basic;
+
 public class recursion1 {
     public static void print(int n) {
         if (n == 5) {
