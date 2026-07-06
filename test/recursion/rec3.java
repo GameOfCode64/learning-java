@@ -143,7 +143,18 @@ public class rec3 {
 
     }
 
+    static String reverse(String s) {
+        if (s.isEmpty()) {
+            return "";
+        }
+
+        char ch = s.charAt(0);
+
+        return reverse(s.substring(1)) + ch;
+
+    }
+
     public static void main(String[] args) {
-        System.out.println(moveAllX("axbxcxd"));
+        System.out.println(reverse("hello"));
     }
 }
