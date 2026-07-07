@@ -2,7 +2,7 @@ package recursion;
 
 import java.util.HashMap;
 
-public class rec3 {
+public class stringQuestionUsingRecursion {
     static void print(String s) {
 
         if (s.length() == 0) {
@@ -269,9 +269,7 @@ public class rec3 {
 
     public static void main(String[] args) {
         String input = "AAABBC";
-
         String result = huffmanCode(input, "", input.charAt(0), 1, 1);
-
         System.out.println(result);
     }
 }

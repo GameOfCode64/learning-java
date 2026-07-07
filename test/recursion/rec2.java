@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class rec2 {
     static void subSeq(String p, String up) {
