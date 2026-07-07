@@ -1,5 +1,7 @@
 package recursion;
 
+import java.util.HashMap;
+
 public class rec3 {
     static void print(String s) {
 
@@ -154,7 +156,122 @@ public class rec3 {
 
     }
 
+    static String removeAllAdjacent(String s, String n, int count) {
+        if (count >= s.length()) {
+            return n;
+        }
+        if (count == s.length() - 1) {
+            return removeAllAdjacent(s, n + s.charAt(count), count + 1);
+        }
+
+        char first = s.charAt(count);
+        char second = s.charAt(count + 1);
+
+        if (first != second) {
+            return removeAllAdjacent(s, n + first, count + 1);
+        } else {
+            return removeAllAdjacent(s, n, count + 2);
+        }
+    }
+
+    static String returnUppercase(String s) {
+        if (s.isEmpty()) {
+            return "";
+        }
+
+        char ch = s.charAt(0);
+
+        if (Character.isUpperCase(ch)) {
+            return String.valueOf(ch);
+        } else {
+            return returnUppercase(s.substring(1));
+        }
+    }
+
+    // --------------------------------------------------------------------------------------------------
+
+    // return last Uppercase Latter
+    static String returnLastUppercaseLatter(String s, char lastUpper) {
+        if (s.isEmpty()) {
+            return String.valueOf(lastUpper);
+        }
+        char ch = s.charAt(0);
+
+        if (Character.isUpperCase(ch)) {
+            return returnLastUppercaseLatter(s.substring(1), lastUpper = ch);
+        }
+        return returnLastUppercaseLatter(s.substring(1), lastUpper);
+    }
+
+    // return index of first vowel
+    static int returnFirstVowel(String s, int index) {
+        if (s.isEmpty()) {
+            return -1;
+        }
+        char ch = s.charAt(0);
+        boolean isVowel = checkVowel(ch);
+
+        if (isVowel) {
+            return index;
+        }
+
+        return returnFirstVowel(s.substring(1), index + 1);
+    }
+
+    // count duplicate groups.
+
+    static HashMap<String, Integer> map = new HashMap<>();
+
+    static int countDuplicateGroups(String s, int count, char last) {
+        if (s.isEmpty()) {
+            return count;
+        }
+
+        char ch = s.charAt(0);
+
+        if (ch == last) {
+            return countDuplicateGroups(s.substring(1), count, ch);
+        } else {
+            return countDuplicateGroups(s.substring(1), count + 1, ch);
+        }
+
+    }
+
+    // find the longest word
+    static int findLongestWord(String s, int max, int count, int length) {
+
+        if (length >= s.length()) {
+            return Math.max(count, max);
+        }
+        char ch = s.charAt(length);
+        if (ch == ' ') {
+            return findLongestWord(s, Math.max(count, max), count = 0, length + 1);
+        }
+
+        return findLongestWord(s, max, count + 1, length + 1);
+    }
+
+    // Huffman code
+    static String huffmanCode(String s, String n, char lastCh, int count, int index) {
+        if (index >= s.length()) {
+            return n + lastCh + count;
+        }
+
+        char ch = s.charAt(index);
+
+        if (ch == lastCh) {
+            return huffmanCode(s, n, lastCh, count + 1, index + 1);
+        } else {
+
+            return huffmanCode(s, n + lastCh + count, ch, 1, index + 1);
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println(reverse("hello"));
+        String input = "AAABBC";
+
+        String result = huffmanCode(input, "", input.charAt(0), 1, 1);
+
+        System.out.println(result);
     }
 }
