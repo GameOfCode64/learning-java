@@ -1,5 +1,7 @@
 package recursion;
 
+import java.util.ArrayList;
+
 public class arrayRecursion {
 
     public static void printElement(int[] arr, int index) {
@@ -51,9 +53,55 @@ public class arrayRecursion {
         return arr[index] > maxRest ? arr[index] : maxRest;
     }
 
-    public static void main(String[] args) {
-        int[] arr = { 2, 4, 6, 3, 5 };
-        System.out.println(findMaxWithoutAcc(arr, 0));
+    public static boolean isSorted(int[] arr, int index) {
+        if (index >= arr.length - 1) {
+            return true;
+        }
 
+        if (arr[index] > arr[index + 1]) {
+            return false;
+        }
+
+        return isSorted(arr, index + 1);
+    }
+
+    public static int LinearSearch(int arr[], int index, int target) {
+        if (index > arr.length - 1) {
+            return -1;
+        }
+        if (arr[index] == target) {
+            return index;
+        }
+
+        return LinearSearch(arr, index + 1, target);
+    }
+
+    public static int countOccurrences(int[] arr, int index, int target) {
+        if (index >= arr.length) {
+            return 0;
+        }
+
+        return arr[index] == target ? 1 + countOccurrences(arr, index + 1, target)
+                : countOccurrences(arr, index + 1, target);
+    }
+
+    public static ArrayList<Integer> countOccurrencesWithIndex(int[] arr, int index, int target) {
+
+        if (index >= arr.length) {
+            return new ArrayList<>();
+        }
+
+        ArrayList<Integer> list = countOccurrencesWithIndex(arr, index + 1, target);
+
+        if (arr[index] == target) {
+            list.add(index);
+        }
+
+        return list;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = { 2, 5, 7, 5, 9, 5, 4, 3 };
+        System.out.println(countOccurrencesWithIndex(arr, 0, 5));
     }
 }

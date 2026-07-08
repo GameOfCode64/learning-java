@@ -1,19 +1,26 @@
 public class tempCodeRunnerFile {
 
-    static int[] moveleft(int arr[]) {
-        int writePointer = 0; // Tracks where the next non-zero number goes
+    public int[] sumAndMultiply(String s, int[][] queries) {
+        int[] result = new int[queries.length];
 
-        for (int i = 0; i < arr.length; i++) {
-            // If we find a non-zero element, swap it to the front
-            if (arr[i] != 0) {
-                int temp = arr[i];
-                arr[i] = arr[writePointer];
-                arr[writePointer] = temp;
+        for (int i = 0; i < queries.length; i++) {
+            long num = 0;
+            long sum = 0;
 
-                writePointer++; // Move the write pointer forward
+            for (int j = 0; j < queries[i].length; j++) {
+                int val = queries[i][j];
+                if (val >= queries[i][0] && queries[i][j] <= queries.length) {
+                    sum += queries[i][j];
+                    if (queries[i][j] > 0) {
+                        num = num * 10 + queries[i][j];
+                    }
+                }
             }
+            result[i] = (int) (num * sum);
+
         }
-        return arr;
+
+        return result;
     }
 
     public static void main(String[] argu) {
