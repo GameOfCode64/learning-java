@@ -90,18 +90,89 @@ public class arrayRecursion {
         if (index >= arr.length) {
             return new ArrayList<>();
         }
-
         ArrayList<Integer> list = countOccurrencesWithIndex(arr, index + 1, target);
-
         if (arr[index] == target) {
             list.add(index);
         }
-
         return list;
     }
 
+    public static ArrayList<Integer> findAll(int[] arr, int target, int index, ArrayList<Integer> list) {
+        if (index >= arr.length) {
+            return list;
+        }
+
+        if (arr[index] == target) {
+            list.add(index);
+            return findAll(arr, target, index + 1, list);
+        }
+
+        return findAll(arr, target, index + 1, list);
+    }
+
+    static int binarySearch(int[] arr, int target, int start, int end) {
+
+        if (start > end) {
+            return -1;
+        }
+
+        int mid = start + (end - start) / 2;
+
+        if (arr[mid] == target) {
+            return mid;
+        }
+
+        if (target > arr[mid]) {
+            return binarySearch(arr, target, mid + 1, end);
+        } else {
+            return binarySearch(arr, target, start, mid - 1);
+        }
+    }
+
+    static int binarySearchFirstOccurrence(int[] arr, int target, int start, int end) {
+
+        if (start > end) {
+            return -1;
+        }
+
+        int mid = start + (end - start) / 2;
+
+        if (arr[mid] == target) {
+            if (mid == 0 || arr[mid - 1] != target) {
+                return mid;
+            }
+            return binarySearchFirstOccurrence(arr, target, start, mid - 1);
+        }
+
+        if (arr[mid] > target) {
+            return binarySearchFirstOccurrence(arr, target, start, mid - 1);
+        } else {
+            return binarySearchFirstOccurrence(arr, target, mid + 1, end);
+        }
+    }
+
+    static int binarySearchLastOccurrence(int[] arr, int target, int start, int end) {
+        if (start > end) {
+            return -1;
+        }
+
+        int mid = start + (end - start) / 2;
+        if (arr[mid] == target) {
+            if (mid == arr.length - 1 || arr[mid + 1] != target) {
+                return mid;
+            }
+            return binarySearchLastOccurrence(arr, target, mid + 1, end);
+        }
+
+        if (arr[mid] > target) {
+            return binarySearchLastOccurrence(arr, target, start, mid - 1);
+        } else {
+            return binarySearchLastOccurrence(arr, target, mid + 1, end);
+        }
+    }
+
     public static void main(String[] args) {
-        int[] arr = { 2, 5, 7, 5, 9, 5, 4, 3 };
-        System.out.println(countOccurrencesWithIndex(arr, 0, 5));
+        int[] arr = { 1, 2, 2, 2, 3, 4 };
+        System.out.println(binarySearchLastOccurrence(arr, 2, 0, arr.length - 1));
     }
 }
