@@ -3,7 +3,7 @@ public class MaximumTotalSubarrayValue {
     public static void main(String[] args) {
         int[] nums = { 11, 8 };
         int k = 2;
-
+//  hi hello 
         long ans = 0;
         int min = nums[0];
         int max = nums[0];
