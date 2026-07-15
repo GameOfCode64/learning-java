@@ -13,15 +13,15 @@ public class backtracking {
     }
 
     static void subsets2(int[] arr, int index, ArrayList<Integer> current) {
-    if (index >= arr.length) {
-    System.out.println(current);
-    return;
-    }
-    current.add(arr[index]);
-    subsets(arr, index + 1, current);
+        if (index >= arr.length) {
+            System.out.println(current);
+            return;
+        }
+        current.add(arr[index]);
+        subsets2(arr, index + 1, current);
 
-    current.remove(current.size() - 1);
-    subsets(arr, index + 1, current);
+        current.remove(current.size() - 1);
+        subsets2(arr, index + 1, current);
 
     }
 
