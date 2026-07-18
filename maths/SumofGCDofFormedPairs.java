@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SumofGCDofFormedPairs {
     static int gcd(int a, int b) {
         while (b != 0) {
