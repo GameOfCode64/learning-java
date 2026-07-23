@@ -98,6 +98,39 @@ public class backtracking {
         subsetsOfSumLessTarget(arr, index + 1, sum, target, current);
     }
 
+    private static final Map<Character, String> PHONE_MAP = Map.of(
+        '2', "abc", '3', "def", '4', "ghi", '5', "jkl",
+        '6', "mno", '7', "pqrs", '8', "tuv", '9', "wxyz"
+    );
+
+    public List<String> letterCombinations(String digits) {
+        List<String> result = new ArrayList<>();
+        
+        if (digits == null || digits.isEmpty()) {
+            return result;
+        }
+
+        backtrack(0, digits, new StringBuilder(), result);
+        return result;
+    }
+
+    private void backtrack(int index, String digits, StringBuilder path, List<String> result) {
+        if (index == digits.length()) {
+            result.add(path.toString());
+            return;
+        }
+
+        char digit = digits.charAt(index);
+        String letters = PHONE_MAP.get(digit);
+
+        for (int i = 0; i < letters.length(); i++) {
+            path.append(letters.charAt(i));
+            backtrack(index + 1, digits, path, result);
+            path.deleteCharAt(path.length() - 1); 
+        }
+    }
+
+
     public static void main(String[] args) {
 
         int[] arr = { 1, 3, 4 };
