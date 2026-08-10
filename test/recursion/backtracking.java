@@ -1,7 +1,7 @@
-package recursion;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // testing go
 public class backtracking {
@@ -98,14 +98,13 @@ public class backtracking {
         subsetsOfSumLessTarget(arr, index + 1, sum, target, current);
     }
 
-    private static final Map<Character, String> PHONE_MAP = Map.of(
-        '2', "abc", '3', "def", '4', "ghi", '5', "jkl",
-        '6', "mno", '7', "pqrs", '8', "tuv", '9', "wxyz"
-    );
+    static final Map<Character, String> PHONE_MAP = Map.of(
+            '2', "abc", '3', "def", '4', "ghi", '5', "jkl",
+            '6', "mno", '7', "pqrs", '8', "tuv", '9', "wxyz");
 
     public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
-        
+
         if (digits == null || digits.isEmpty()) {
             return result;
         }
@@ -126,11 +125,11 @@ public class backtracking {
         for (int i = 0; i < letters.length(); i++) {
             path.append(letters.charAt(i));
             backtrack(index + 1, digits, path, result);
-            path.deleteCharAt(path.length() - 1); 
+            path.deleteCharAt(path.length() - 1);
         }
     }
 
-// 
+    //
     public static void main(String[] args) {
 
         int[] arr = { 1, 3, 4 };
