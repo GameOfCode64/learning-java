@@ -1,6 +1,9 @@
+
+import java.util.Arrays;
+
 public class tempCodeRunnerFile {
 
-    public int[] sumAndMultiply(String s, int[][] queries) {
+    public static int[] sumAndMultiply(String s, int[][] queries) {
         int[] result = new int[queries.length];
 
         for (int i = 0; i < queries.length; i++) {
@@ -25,10 +28,7 @@ public class tempCodeRunnerFile {
 
     public static void main(String[] argu) {
         int[] arr = { 1, 0, 3, 0, 5, 0, 7 };
-        int[] result = moveleft(arr);
-
-        for (int i = 0; i < result.length; i++) {
-            System.out.print(result[i] + ",");
-        }
+        int[] result = sumAndMultiply("abc", new int[][] { { 1, 2, 3 }, { 4, 5, 6 } });
+        System.out.println(Arrays.toString(result));
     }
 }
