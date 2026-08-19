@@ -29,6 +29,34 @@ public class CircularLL {
         size++;
     }
 
+    private void insertFirst(int value) {
+        Node newNode = new Node(value);
+        if (size == 0) {
+            head = newNode;
+            tail = newNode;
+            tail.next = head;
+        } else {
+            newNode.next = head;
+            head = newNode;
+            tail.next = head;
+        }
+        size++;
+    }
+
+    private void insertLast(int value) {
+        Node newNode = new Node(value);
+        if (size == 0) {
+            head = newNode;
+            tail = newNode;
+            tail.next = head;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+            tail.next = head;
+        }
+        size++;
+    }
+
     private class Node {
         int value;
         Node next;
