@@ -8,9 +8,7 @@ public class LinkedList {
     public LinkedList() {
         this.size = 0;
     }
-
-
-
+    
     public void insertFirst(int val) {
         Node n = new Node(val);
         n.next = head;
