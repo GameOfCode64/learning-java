@@ -2,7 +2,7 @@ public class MergeSortedArray {
 
     public static void main(String[] args) {
         int[] arr1 = { 1, 2, 3, 0, 0, 0 };
-        int[] arr2 = { 2, 5, 6 };
+        int[] arr2 = { 6,2,9 };
         int[] arr = new int[arr1.length + arr2.length];
 
         int left = 0;
