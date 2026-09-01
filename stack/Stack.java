@@ -1,5 +1,3 @@
-
-
 //  Stack using arrays !
 public class Stack {
 
