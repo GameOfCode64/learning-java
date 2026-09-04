@@ -1,11 +1,6 @@
-
 import java.util.Scanner;
-
 public class Main {
-
- 
     public static void main(String[] argu) {
-
         int n = -10;
         System.out.println(Math.abs(n));
 

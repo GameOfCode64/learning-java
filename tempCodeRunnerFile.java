@@ -1,15 +1,11 @@
-
 import java.util.Arrays;
-
 public class tempCodeRunnerFile {
-
     public static int[] sumAndMultiply(String s, int[][] queries) {
         int[] result = new int[queries.length];
 
         for (int i = 0; i < queries.length; i++) {
             long num = 0;
             long sum = 0;
-
             for (int j = 0; j < queries[i].length; j++) {
                 int val = queries[i][j];
                 if (val >= queries[i][0] && queries[i][j] <= queries.length) {
@@ -20,12 +16,10 @@ public class tempCodeRunnerFile {
                 }
             }
             result[i] = (int) (num * sum);
-
         }
 
         return result;
     }
-
     public static void main(String[] argu) {
         int[] arr = { 1, 0, 3, 0, 5, 0, 7 };
         int[] result = sumAndMultiply("abc", new int[][] { { 1, 2, 3 }, { 4, 5, 6 } });
