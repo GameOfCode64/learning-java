@@ -2,8 +2,13 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
+// DFS ->
+
 public class dfs {
     Queue<Node> queue = new LinkedList<>();
+    Queue<Node> queue1 = new LinkedList<>();
+    Queue<Node> queue2 = new LinkedList<>();
+
 
     public void levelOrder() {
         if (queue.isEmpty()) {
