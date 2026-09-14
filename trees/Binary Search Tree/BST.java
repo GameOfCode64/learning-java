@@ -3,21 +3,31 @@ public class BST {
 
     private Node root;
 
-    Node Current = root;
+    Node current = root;
 
     public void insert(int val){
         Node node = new Node(val);
-        if(Current == null){
+        if(root == null){
             root = node;
             return;
         }
-        if(val > Current.val){    
-            Current.right = node;
-        }else{
-            Current.left = node;
+        Node current = root;
+        while (val != current.val) {
+            if(val > current.val){
+                if(current.right == null){
+                    current.right = node;
+                    return;
+                }
+                current = current.right;
+            }else{
+                if(current.left == null){
+                    current.left = node;
+                    return;
+                }
+                current = current.left;
+            }
         }
     }
-
     private class Node {
 
         int val;
