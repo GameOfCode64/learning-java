@@ -3,6 +3,8 @@ public class BST {
 
     private Node root;
 
+  
+
     Node current = root;
 
     public void insert(int val){
